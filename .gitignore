@@ -1,0 +1,6 @@
+*.bak-*
+*.tar*
+*.bundle
+__pycache__/
+*.pyc
+.venv/

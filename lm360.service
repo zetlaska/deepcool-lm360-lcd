@@ -1,0 +1,19 @@
+[Unit]
+Description=DeepCool LM360 AIO LCD Monitor
+After=lm_sensors.service
+Wants=lm_sensors.service
+
+[Service]
+Type=simple
+User=root
+Group=lm360
+ExecStartPre=/bin/sleep 12
+ExecStart=/usr/local/bin/lm360 start
+Restart=always
+RestartSec=10
+StateDirectory=lm360
+RuntimeDirectory=lm360
+RuntimeDirectoryMode=0750
+
+[Install]
+WantedBy=multi-user.target

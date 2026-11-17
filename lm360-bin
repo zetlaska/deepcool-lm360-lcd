@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""lm360 CLI entry point."""
+
+import sys
+from pathlib import Path
+
+MODULE_DIRECTORY = Path(__file__).resolve().parent.parent / "lib" / "lm360"
+if MODULE_DIRECTORY.is_dir():
+    sys.path.insert(0, str(MODULE_DIRECTORY.parent))
+
+from lm360.cli import main
+
+if __name__ == "__main__":
+    sys.exit(main())
